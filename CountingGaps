@@ -1,0 +1,34 @@
+
+import java.util.Arrays;
+
+public class Gap {
+
+
+	    public static void main(String args[]) {
+	        int[] arr1 = {9, 4, 26, 26, 0, 0, 5, 20, 6, 25, 5};
+	       
+	        Gap obj = new Gap();
+
+	        System.out.println(Arrays.toString(arr1));
+	        System.out.println(obj.largestGap(arr1));
+	    }
+
+	    public int largestGap(int[] arr) {
+	        Arrays.sort(arr);
+	        System.out.println(Arrays.toString(arr));
+
+	        int gap = 0;
+
+	        for (int i = 0; i < arr.length; i++) {
+	            if (i + 1 == arr.length) {
+	                break;
+	            }
+
+	            if (arr[i+1] - arr[i] > gap) {
+	                gap = arr[i+1] - arr[i];
+	            }
+	        }
+
+	        return gap;
+	    }
+	}
